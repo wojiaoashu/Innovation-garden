@@ -1,2 +1,7 @@
 # Innovation-garden
-My first site of front-end development.
+
+版本：mysql1.0
+
+功能：增加注册、登录、发表文章、查看文章、搜索文章等功能。使用mysql作为数据库，后台框架使用SpringBoot+Mybatis。
+
+计划：增加文章关键字、验证码、记住密码、右上角显示登录头像、jwt令牌过期自动续期、个人中心(个人信息、文章修改)、搜索功能优化等。
