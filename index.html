@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>创新园地</title>
-	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="css/index.css">
 	<script src="js/mock.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 </head>
@@ -13,7 +13,7 @@
 			<canvas class="canvas" id="canvas">创新园地</canvas>
 		</div>
 		<div class="nav">
-			<a href="javascript:void(0)" class="navItem nav_homePage" id="nav_homePage"><img src="img/homepage2.png"><img src="img/homepage.png">首页</a>
+			<a href="index.html" class="navItem nav_homePage" id="nav_homePage"><img src="img/homepage2.png"><img src="img/homepage.png">首页</a>
 			<a href="javascript:void(0)" class="navItem nav_collection" id="nav_collection"><img src="img/collection2.png"><img src="img/collection.png">个人收藏</a>
 			<a href="javascript:void(0)" class="navItem nav_givescore" id="nav_givescore"><img src="img/givescore2.png"><img src="img/givescore.png">等级评价</a>
 			<a href="javascript:void(0)" class="navItem nav_login" id="nav_login"><img src="img/login2.png"><img src="img/login.png">登录</a>
@@ -25,7 +25,7 @@
 
 	<div class="main_wrap">
 		<div class="main">
-			<a href="javascript:void(0)" class="writeTip"><img src="img/write2.png"><img src="img/write.png">发表文章</a>
+			<a href="wangEditor.html" target="_blank" class="writeTip"><img src="img/write2.png"><img src="img/write.png">发表文章</a>
 			<div class="writeTipShadow"></div>
 			<div class="search_area">
 				<input type="text" class="search_input" placeholder='搜索'>				
@@ -87,6 +87,15 @@
 				</div>
 
 			</div>
+
+			<a href="javascript:void(0)" id="a_article_con"></a>
+			<div class="article_con" id="article_con">
+				<p class="article_con_title"></p>
+				<p class="article_con_about"><span class="article_employee_name"></span><span class="article_employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span><span class="article_date">2018-10-10 13:55</span></p>
+				<p class="article_con_text"></p>
+				<a class="article_con_return" id="article_con_return" href='#article_navs'>返回</a>
+			</div>
+
 			<div class="article_navs" id="article_navs">
 <!--  				<div class="article_navItem">
 					<dl class="employee">
@@ -105,51 +114,51 @@
  -->				
  				<div class="article_navItem">
 					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
-					<a href="javascript:void(0)" class="article_title"></a>
+					<a href="#a_article_con" class="article_title"></a>
 					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
-					<a href="javascript:void(0)" class="article_pre"></a>
+					<a href="#a_article_con" class="article_pre"></a>
 				</div>	
  				<div class="article_navItem">
 					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
-					<a href="javascript:void(0)" class="article_title"></a>
+					<a href="#a_article_con" class="article_title"></a>
 					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
-					<a href="javascript:void(0)" class="article_pre"></a>
+					<a href="#a_article_con" class="article_pre"></a>
 				</div>	
  				<div class="article_navItem">
 					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
-					<a href="javascript:void(0)" class="article_title"></a>
+					<a href="#a_article_con" class="article_title"></a>
 					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
-					<a href="javascript:void(0)" class="article_pre"></a>
+					<a href="#a_article_con" class="article_pre"></a>
 				</div>				
  				<div class="article_navItem">
 					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
-					<a href="javascript:void(0)" class="article_title"></a>
+					<a href="#a_article_con" class="article_title"></a>
 					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
-					<a href="javascript:void(0)" class="article_pre"></a>
+					<a href="#a_article_con" class="article_pre"></a>
 				</div>				
  				<div class="article_navItem">
 					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
-					<a href="javascript:void(0)" class="article_title"></a>
+					<a href="#a_article_con" class="article_title"></a>
 					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
-					<a href="javascript:void(0)" class="article_pre"></a>
+					<a href="#a_article_con" class="article_pre"></a>
 				</div>				
  				<div class="article_navItem">
 					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
-					<a href="javascript:void(0)" class="article_title"></a>
+					<a href="#a_article_con" class="article_title"></a>
 					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
-					<a href="javascript:void(0)" class="article_pre"></a>
+					<a href="#a_article_con" class="article_pre"></a>
 				</div>				
  				<div class="article_navItem">
 					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
-					<a href="javascript:void(0)" class="article_title"></a>
+					<a href="#a_article_con" class="article_title"></a>
 					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
-					<a href="javascript:void(0)" class="article_pre"></a>
+					<a href="#a_article_con" class="article_pre"></a>
 				</div>																											
  				<div class="article_navItem">
 					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
-					<a href="javascript:void(0)" class="article_title"></a>
+					<a href="#a_article_con" class="article_title"></a>
 					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
-					<a href="javascript:void(0)" class="article_pre"></a>
+					<a href="#a_article_con" class="article_pre"></a>
 				</div>																											
 			</div>
 			<div class="page" id="page">

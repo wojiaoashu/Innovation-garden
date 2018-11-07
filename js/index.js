@@ -164,6 +164,7 @@ function changePage(){
 
                     let articleTitle = articleNavItems[i].getElementsByClassName('article_title')[0];
                     articleTitle.innerHTML = employeesAndArticles.article[i].title;
+                    articleTitle.id = 't_'+pageValue+'_'+i;
 
                     let employeeDpartment = articleNavItems[i].getElementsByClassName('employee_dpartment')[0];
                     employeeDpartment.innerHTML = employeesAndArticles.employee[i].dpartment+'&nbsp;';
@@ -179,6 +180,7 @@ function changePage(){
 
                     let articlePre = articleNavItems[i].getElementsByClassName('article_pre')[0];
                     articlePre.innerHTML = employeesAndArticles.article[i].pre;
+                    articlePre.id = 'pre_'+pageValue+'_'+i;
                 } 
             }
         }
@@ -537,22 +539,190 @@ function showLogin(){
 
 
 
+// 展示一篇文章内容
+function showArticle(){
+    // 文章列表
+    var articleBox = document.getElementById('article_navs');
+    var pageBox = document.getElementById('page');
+    var articleTitles = articleBox.getElementsByClassName('article_title');
+    var articlePres = articleBox.getElementsByClassName('article_pre');
+    // 文章内容
+    var articleCon = document.getElementById('article_con');
+    var articleConTitle = articleCon.getElementsByClassName('article_con_title')[0];
+    var article_employee_name = articleCon.getElementsByClassName('article_employee_name')[0];
+    var article_employee_dpartment = articleCon.getElementsByClassName('article_employee_dpartment')[0];
+    var article_visit = articleCon.getElementsByClassName('article_visit')[0];
+    var article_comment = articleCon.getElementsByClassName('article_comment')[0];
+    var article_level = articleCon.getElementsByClassName('article_level')[0];
+    var article_date = articleCon.getElementsByClassName('article_date')[0];
+    var article_con_text = articleCon.getElementsByClassName('article_con_text')[0];
+    // 拦截请求mock假数据，此i(还有一个页码)应与database相关，现无意义
+    function myajaxForAtricle(url,i) {
+        if (window.XMLHttpRequest) {
+            ajax = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            try {
+                ajax = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    ajax = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {}
+            }
+        }
+        if (!ajax) {
+            window.alert("不能创建XMLHttpRequest对象实例.");
+            return false;
+        }
+        ajax.open("GET", url, true);
+        ajax.send(null);
+        ajax.onreadystatechange = function() {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                let employeesAndArticles = JSON.parse(ajax.responseText);
+                   
+                articleConTitle.innerHTML = employeesAndArticles.article[i].title;
+                article_employee_name.innerHTML = employeesAndArticles.employee[i].name+'&nbsp;';
+                article_employee_dpartment.innerHTML = employeesAndArticles.employee[i].dpartment+'&nbsp;';
+                article_visit.innerHTML = '浏览'+employeesAndArticles.article[i].visit+'&nbsp;';
+                article_comment.innerHTML = '评论'+employeesAndArticles.article[i].comment+'&nbsp;';
+                article_level.innerHTML = employeesAndArticles.article[i].lever+'&nbsp;';
+                article_con_text.innerHTML = employeesAndArticles.article[i].pre.repeat(5);
+            }
+        }
+    }
+    // 文章标题和预览 绑定事件
+    for(let i = 0; i < articleTitles.length; i++){
+
+        articleTitles[i].onclick = articlePres[i].onclick = function(){
+            // 清除列表
+            articleBox.className = 'displayNone';
+            pageBox.className = 'displayNone';
+            // 展示文章
+            articleCon.style.display = 'block';
+            articleIndex = parseInt(this.id.split('_')[2]);
+            myajaxForAtricle('http://test.com?employees=all',articleIndex);
+        }
+    }
+    // 返回按钮
+    var article_con_return = document.getElementById('article_con_return');
+    article_con_return.onclick = function(){
+        articleBox.className = 'article_navs';
+        pageBox.className = 'page';
+
+        articleConTitle.innerHTML = '';
+        article_employee_name.innerHTML = '';
+        article_employee_dpartment.innerHTML = '';
+        article_visit.innerHTML = '';
+        article_comment.innerHTML = '';
+        article_level.innerHTML = '';
+        article_con_text.innerHTML = ''; 
+
+        articleCon.style.display = 'none';
+    }
+}
+
+
+
+// 富文本编辑器
+function showEditor(){
+    // 创建编辑器
+    var E = window.wangEditor;
+    var editor = new E('#editor');
+    editor.customConfig.uploadImgShowBase64 = true;      // 使用 base64 保存图片。 我：这种方式方便预览。
+    // editor.customConfig.uploadImgServer = '/upload'   // 上传图片到服务器，与base64方式二选一。我：这种方式方便xss过滤。
+    editor.create();
+    // 按钮
+    var editorClean = document.getElementById('editor_clean');
+    var editorPreview = document.getElementById('editor_preview');
+    var editorSubmit = document.getElementById('editor_submit');
+    // 清空
+    editorClean.addEventListener('click', function () {
+        let text = editor.txt.text(); 
+        if(text.length > 100){
+            let deleteFlag = confirm('确定删除？');
+            if(!deleteFlag){return;}
+        }
+        editor.txt.clear();
+    }, false);   
+    // 预览
+    editorPreview.addEventListener('click', function () {
+        // 获取编辑器输入的内容
+        let html = editor.txt.html();
+        // let text = editor.txt.text(); 
+
+        //  预览框
+        let ediPreDiv = document.createElement('div');
+        ediPreDiv.className = 'ediPreDiv';
+        ediPreDiv.style.zIndex = 100001;
+        ediPreDiv.innerHTML = html;
+        document.body.appendChild(ediPreDiv);
+        let pHeight = ediPreDiv.scrollHeight;
+        if(pHeight < 598){ 
+            pHeight = 598; 
+            ediPreDiv.style.height = pHeight + 'px'; 
+        }
+
+        // 遮罩层
+        let sHeight = document.documentElement.scrollHeight;
+        let sWidth = document.documentElement.scrollWidth;
+        if(sHeight < pHeight + 200){ 
+            sHeight = pHeight + 200; 
+        }
+        let oMask = document.createElement('div');
+        oMask.className = 'mask ediMask';
+        oMask.style.height = sHeight + 'px';
+        oMask.style.width = sWidth + 'px';
+        oMask.style.zIndex = 100000;
+        document.body.appendChild(oMask);
+
+        // 点击遮罩层 取消 预览
+        oMask.addEventListener('click',function(){
+            document.body.removeChild(oMask);
+            document.body.removeChild(ediPreDiv);
+        },false);
+
+    }, false);         
+    // 提交
+    editorSubmit.addEventListener('click', function () {
+        let publish = confirm('发表文章？');
+        if(publish){
+            // 获取内容并清空
+            let html = editor.txt.html()
+            let filterHtml = filterXSS(html)  // 此处进行 xss 攻击过滤，会使base64保存的图片被过滤掉。
+            editor.txt.clear();
+            // 发送到服务器
+            alert('发表成功！');
+        }else{
+            return;
+        }
+    }, false); 
+
+}
+
+
 window.onload = function(){
-    // canvas标题动画
-    showCanvas();
-    // 搜索导航样式切换
-    dealSearchList();
-    // 文章列表假数据
-    mockArticle();
-    // 页码处理函数
-    changePage();
-    // 热门文章动画
-    showHotArticle();
-    // 面向对象动画
-    showTheOne();
-    // 点击登录
-    var oBtnLogin = document.getElementById('nav_login');
-    oBtnLogin.onclick = function(){
-        showLogin();
+    var pn = location.pathname.split('/').pop().replace(/.html/g,'');
+    if(pn == 'index'){
+        // canvas标题动画
+        showCanvas();
+        // 搜索导航样式切换
+        dealSearchList();
+        // 点击登录
+        var oBtnLogin = document.getElementById('nav_login');
+        oBtnLogin.onclick = function(){
+            showLogin();
+        }
+        // 文章列表假数据
+        mockArticle();
+        // 页码处理函数
+        changePage();
+        // 展示一篇文章内容
+        showArticle();
+        // 热门文章动画
+        showHotArticle();
+        // 面向对象动画
+        showTheOne();
+    }else if(pn == 'wangEditor'){
+        // 富文本编辑器
+        showEditor();
     }
 }
