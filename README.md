@@ -1,2 +1,5 @@
 # Innovation-garden
-My first site of front-end development.
+版本：mock1.0
+功能：顶部的canvas动画、登录框、热门文章动画、系统公告展示、面向对象动画、搜索框和搜索导航展示、文章列表展示、固定页码。
+说明：所有功能只是前端展示，文章数据是mock的随机数据。
+计划：增加发表文章功能。
