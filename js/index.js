@@ -1220,7 +1220,7 @@ function myAjax(url,type,json_con,callback){
 
 window.onload = function(){
 
-    homePath = 'http://47.107.148.70:8080/';
+    homePath = 'http://127.0.0.1:8080/';
     checkLoginTimer = null;
     isLogin = true;
     var pn = location.pathname.split('/').pop().replace(/.html/g,'');
