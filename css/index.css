@@ -41,11 +41,11 @@ li{
 }
 .banner,.footer{
 	width: 100%;
-	background-image: url(img/headerblueprint.png),linear-gradient(to bottom, #1f4d78, #1862a7); 
+	background-image: url(../img/headerblueprint.png),linear-gradient(to bottom, #1f4d78, #1862a7); 
 	background-color: #1f4d78;
 	overflow: hidden;
 }
-.canvas{
+.canvas,.editor_banner{
 	display: block;
 	margin: 0 auto;
 	width: 800px;
@@ -56,6 +56,9 @@ li{
 	font-weight: bold;
 	font-family: sans-serif;
 	text-align: center;
+}
+.editor_banner{
+	width: 100%;
 }
 /* 导航条 */
 .nav{
@@ -90,6 +93,19 @@ li{
 .nav_login img{
 	margin-top: 16px;
 }
+.nav_login span{
+	width: 100px;
+	color: #fff;
+	font-size: 16px;
+	overflow: hidden;
+	text-align: right;
+	position: absolute;
+	left: -80px;
+}
+.nav_login span:hover{
+	color: #fff;
+}
+
 /* 彩条 */
 .navBottom{
 	display: inline-block;
@@ -97,7 +113,7 @@ li{
 	float: left;
 }
 .navBottom1{
-	width: 20%;
+	width: 25%;
 	background: #0279e8;
 }
 .navBottom2{
@@ -105,7 +121,7 @@ li{
 	background: #3cb600;
 }
 .navBottom3{
-	width: 30%;
+	width: 25%;
 	background: #a85efb;
 }
 
@@ -260,19 +276,24 @@ li{
 	background: #f0f0f0;
 	float: left;
 	margin-top: 4px;
-	margin-left: 5px;
+	margin-left: 15px;
 	overflow: hidden;
 	border: none;
 	outline: none;
-	font-size: 20px;
+	font-size: 18px;
+	color: #515151;
 }
 .search_icon{
 	width: 20px;
 	height: 20px;
-	background: url(img/search.png) no-repeat;
+	background: url(../img/search.png) no-repeat;
 	float: right;
 	margin-top: 10px;
-	margin-right: 5px;
+	margin-right: 15px;
+}
+.search_icon:hover{
+	background: url(../img/search2.png) no-repeat;
+	cursor: pointer;
 }
  /* 搜索导航 */
 .search_navs{
@@ -477,6 +498,62 @@ active在前，hover在后，则后面的hover没效果*/
 	     -o-transform: translateX(595px);
 	        transform: translateX(595px);
 }
+
+
+/* 展示一篇文章 */
+.article_con{
+	width: 100%;
+	display: none;
+	position: absolute;
+	top: 300px;
+	margin-left: 50px;
+	min-width: 800px;
+}
+.article_con_title{
+	width: 90%;
+	text-align: center;
+	font-size: 20px;
+	color: #0279e8;
+	margin-bottom: 10px;
+	overflow: auto;
+	word-wrap:break-word; /*使长英文和长数字可以换行*/
+}
+.article_con_about{
+	height: 20px;
+	font-size: 12px;
+	color: #707070;
+	text-align: center;
+	word-spacing: 10px;
+	margin-bottom: 10px;
+}
+.article_con_text{
+	width: 90%;
+	color: #515151;
+	text-indent:2em;
+	max-height: 860px;
+	overflow: auto;
+	word-wrap:break-word; /*使长英文和长数字可以换行*/
+}
+.article_con_return{
+	position: absolute;
+	bottom: -80px;
+	left: calc(50% - 60px);
+	width: 120px;
+	height: 40px;
+	border-radius: 10px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 18px;
+	letter-spacing: 5px;
+	background: #16b9e9;
+	color: #fff;
+	cursor: pointer;
+}
+.article_con_return:hover{
+	background: #0378e9;
+}
+
+
 /*文章列表*/
 .article_navs{
 	position: absolute;
@@ -506,6 +583,9 @@ active在前，hover在后，则后面的hover没效果*/
 	line-height: 20px;
 	color: #515151;
 	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .article_title{
 	width: 100%;
@@ -544,6 +624,7 @@ active在前，hover在后，则后面的hover没效果*/
 	left: 100px;
 	top: 60px;
 	border-bottom: 1px solid #f0f0f0;
+	word-wrap:break-word; /*使长英文和长数字可以换行*/
 }
 /*页码*/
 .page{
@@ -642,7 +723,7 @@ active在前，hover在后，则后面的hover没效果*/
 	    -ms-transform-origin: bottom;
 	     -o-transform-origin: bottom;
 	        transform-origin: bottom;
-	background-image: url(img/banner3d_1.jpeg);
+	background-image: url(../img/banner3d_1.jpeg);
 }
 .banner3d ul li div:nth-child(2){
 	top: 120px;
@@ -656,7 +737,7 @@ active在前，hover在后，则后面的hover没效果*/
 	    -ms-transform-origin: top;
 	     -o-transform-origin: top;
 	        transform-origin: top;
-	background-image: url(img/banner3d_2.jpeg);
+	background-image: url(../img/banner3d_2.jpeg);
 }
 .banner3d ul li div:nth-child(3){
 	-webkit-transform: translateZ(60px); 
@@ -664,7 +745,7 @@ active在前，hover在后，则后面的hover没效果*/
 	    -ms-transform: translateZ(60px); 
 	     -o-transform: translateZ(60px); 
 	        transform: translateZ(60px); 
-	background-image: url(img/banner3d_3.jpeg);
+	background-image: url(../img/banner3d_3.jpeg);
 }
 .banner3d ul li div:nth-child(4){
 	-webkit-transform: translateZ(-60px) rotateX(180deg);
@@ -672,7 +753,7 @@ active在前，hover在后，则后面的hover没效果*/
 	    -ms-transform: translateZ(-60px) rotateX(180deg);
 	     -o-transform: translateZ(-60px) rotateX(180deg);
 	        transform: translateZ(-60px) rotateX(180deg);
-	background-image: url(img/banner3d_4.jpeg);
+	background-image: url(../img/banner3d_4.jpeg);
 }
 .banner3d ul.rot0 li{-webkit-transform: translateZ(-60px) rotateX(0deg);}
 .banner3d ul.rot1 li{-webkit-transform: translateZ(-60px) rotateX(-90deg);}
@@ -967,7 +1048,7 @@ active在前，hover在后，则后面的hover没效果*/
 	border-radius: 3px;
 	border: 5px solid #ddd;
 	box-shadow: 0 0 2px #f0f0f0;
-	background: url(img/wechat.png) no-repeat;
+	background: url(../img/wechat.png) no-repeat;
 	position: absolute;
 	right: 60px;
 	bottom: -25px;
@@ -997,26 +1078,26 @@ active在前，hover在后，则后面的hover没效果*/
 	height: 300px;
 	background: #0378e9;
 	position: fixed;
-	left: 30%;
-	top: 30%;
+	left: calc(50% - 300px);
+	top: calc(50% - 150px);
 	z-index: 1001;
 }
-.login span{
+.login span,.registerBox > span{
 	color: #fff;
 	font-size: 18px;
 	line-height: 50px;
 	padding-left: 25px;
 }
-.loginClose{
+.loginClose,.registerClose{
 	width: 18px;
 	height: 18px;
-	background: url(img/close.png) no-repeat;
+	background: url(../img/close.png) no-repeat;
 	position: absolute;
 	right: 20px;
 	top: 16px;
 }
-.loginClose:hover{
-	background: url(img/close2.png) no-repeat;
+.loginClose:hover,.registerClose:hover{
+	background: url(../img/close2.png) no-repeat;
 	/*border-radius: 50%;*/
 	/*background-color: #f0f0f0;*/
 }
@@ -1045,11 +1126,11 @@ active在前，hover在后，则后面的hover没效果*/
 	z-index: 1;
 }
 .loginNameIcon{
-	background: url(img/loginName.png) no-repeat;
+	background: url(../img/loginName.png) no-repeat;
 	top: 0;
 }
 .loginPassIcon{
-	background: url(img/loginPass.png) no-repeat;
+	background: url(../img/loginPass.png) no-repeat;
 	top: 50px;
 }
 .loginInputItem{
@@ -1162,7 +1243,7 @@ active在前，hover在后，则后面的hover没效果*/
 .loginQQImg{
 	width: 136px;
 	height: 136px;
-	background: url(img/loginQQImg.png) no-repeat;
+	background: url(../img/loginQQImg.png) no-repeat;
 	position: absolute;
 	left: 32px;
 	top: -20px;
@@ -1203,5 +1284,153 @@ active在前，hover在后，则后面的hover没效果*/
 	left: 0;
 	top: 90px;
 }
+
+
+
+/* 注册框 */
+.registerBox{
+	width: 400px;
+	height: 300px;
+	background: #0378e9;
+	position: fixed;
+	left: calc(50% - 150px);
+	top: calc(50% - 150px);
+	z-index: 1001;
+	border-radius: 2px;
+}
+.registerCon{
+	width: 400px;
+	height: 250px;
+	background: #fff;
+	position: absolute;
+	bottom: 0;
+}
+.registerForm{
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	top: 25px;
+	left: 50px;
+}
+.registerIcon{
+	width: 50px;
+	height: 30px;
+	margin-bottom: 20px;
+	line-height: 30px;
+	font-size: 16px;
+	color: #000;
+	position: absolute;
+	left: 0;
+}
+.registerNameSpan,.registerName{
+	top: 0;
+}
+.registerPassSpan,.registerPass{
+	top: 50px;
+}
+.registerPassSpan2,.registerPass2{
+	top: 100px;
+}
+.registerInputItem{
+	width: 250px;
+	height: 30px;
+	margin-bottom: 20px;
+	position: absolute;
+	left: 50px;
+}
+.registerTip{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 12px;
+	color: red;
+	position: absolute;
+	top: 138px;
+}
+.registerBtn{
+	width: 100px;
+	height: 30px;
+	border: none;
+	line-height: 30px;
+	font-size: 16px;
+	position: absolute;
+	top: 170px;
+	left: 100px;
+	background-color: #00c95a;
+	cursor: pointer;
+}
+
+
+
+/* 富文本编辑器 */
+.deitor-title_box{
+	width: 1010px;
+	height: 34px;
+	margin: 50px auto 0px auto;
+}
+.editor_title_span{
+	display: inline-block;
+	width: 50px;
+	height: 30px;
+	font-size: 16px;
+	line-height: 30px;
+}
+.editor_title{
+	display: inline-block;
+	width: 948px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	border: 2px solid  #515151;
+}
+.editor{
+	width: 1000px;
+	margin: 30px auto;
+	background-color: #fff;
+	box-shadow: 0 0 0 2px #fff;
+	border: 2px solid #515151; /* 0378e9 */
+}
+.editor_btn_box{
+	width: 300px;
+	position: absolute;
+	top: 630px;
+	left: calc(50% - 150px);
+	text-align: center;
+}
+.editor_btn{
+	display: inline-block;
+	width: 60px;
+	height: 20px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 20px;
+	margin: 0 5px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.editor_btn:hover{
+	background-color: #16b9e9;
+}
+/* 富文本预览 */
+.ediMask{
+	height: auto;
+}
+.ediPreDiv{
+	width: 1000px;
+	overflow: auto;
+	background-color: #fff;
+	position: absolute;
+	left: calc(50% - 500px);
+	top: 100px;	
+}
+
+
+
+
+
+
 
 
