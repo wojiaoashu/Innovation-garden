@@ -1,2 +1,4 @@
 # Innovation-garden
-My first site of front-end development.
+版本：mysql1.1
+
+功能：
