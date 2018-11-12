@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.steven.mybatisgenerator.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.steven.mybatisgenerator.model.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="user_pasw" property="userPasw" jdbcType="VARCHAR" />
+    <result column="user_mail" property="userMail" jdbcType="VARCHAR" />
+    <result column="user_phoneNumber" property="userPhoneNumber" jdbcType="VARCHAR" />
+    <result column="user_phoPath" property="userPhoPath" jdbcType="VARCHAR" />
+    <result column="user_department" property="userDepartment" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_name, user_pasw,user_mail, user_phoneNumber, user_phoPath, user_department
+  </sql>
+  <sql id="Base_Column_List_toShow" >
+    id, user_name,user_phoPath, user_department
+  </sql>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from user
+  </select>
+  <select id="selectPartToShow" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List_toShow" />
+    from user
+  </select>
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <insert id="insert" parameterType="com.steven.mybatisgenerator.model.User">
+    insert into user (user_name, user_pasw, user_mail, user_phoneNumber)
+    values ( #{userName,jdbcType=VARCHAR},#{userPasw,jdbcType=VARCHAR},
+     #{userMail,jdbcType=VARCHAR},#{userPhoneNumber,jdbcType=VARCHAR})
+  </insert>
+  <select id="selectByEmail" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where user_mail = #{userMail,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByPhone" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where user_phoneNumber = #{userPhoneNumber,jdbcType=VARCHAR}
+  </select>
+</mapper>

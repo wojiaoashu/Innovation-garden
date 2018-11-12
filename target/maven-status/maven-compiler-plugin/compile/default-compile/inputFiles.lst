@@ -1,0 +1,16 @@
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/conf/WebAppConfigurer.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/interceptor/AuthInterceptor.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/entity/Login.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/entity/Output.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/entity/Response.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/entity/OutputOne.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/mapper/UserMapper.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/util/JWT.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/MybatisgeneratorApplication.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/ctrl/MainCtrl.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/interceptor/ResponseHeaderInterceptor.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/mapper/ArticleMapper.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/model/User.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/ctrl/AuthCtrl.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/model/Article.java
+/Users/shuvia/Desktop/mybatisgenerator/src/main/java/com/steven/mybatisgenerator/mapper/ArticleSelectMapper.java

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创新园地</title>
+	<link rel="stylesheet" href="css/index.css">
+	<!-- <script src="js/mock.js"></script> -->
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="banner">
+			<canvas class="canvas" id="canvas">创新园地</canvas>
+		</div>
+		<div class="nav">
+			<a href="index.html" class="navItem nav_homePage" id="nav_homePage"><img src="img/homepage2.png"><img src="img/homepage.png">首页</a>
+			<a href="javascript:void(0)" class="navItem nav_collection" id="nav_collection"><img src="img/collection2.png"><img src="img/collection.png">个人收藏</a>
+			<a href="javascript:void(0)" class="navItem nav_givescore" id="nav_givescore"><img src="img/givescore2.png"><img src="img/givescore.png">等级评价</a>
+			<a href="javascript:void(0)" class="navItem nav_login" id="nav_login"><img src="img/login2.png"><img src="img/login.png">登录</a>
+		</div>
+		<span class="navBottom navBottom1"></span>
+		<span class="navBottom navBottom2"></span>
+		<span class="navBottom navBottom3"></span>
+	</div>
+
+	<div class="main_wrap">
+		<div class="main">
+			<a href="javascript:void(0)" class="writeTip" id="toWangEditorBtn"><img src="img/write2.png"><img src="img/write.png">发表文章</a>
+			<div class="writeTipShadow"></div>
+			<div class="search_area">
+				<input type="text" class="search_input" id="search_input" placeholder='搜索'>				
+				<div class="search_icon" id="search_icon"></div>
+			</div>
+			<div class="search_navs" id="search_navs">
+				<div class="search_nav">
+					<span class="search_nav_title">部门:</span>
+					<div class="search_nav_lists">
+						<a href="javascript:void(0)" class="search_nav_item search_nav_item_active">所有</a>
+						<a href="javascript:void(0)" class="search_nav_item">物联网</a>
+						<a href="javascript:void(0)" class="search_nav_item">私有云</a>
+						<a href="javascript:;" class="search_nav_item">公有云</a>
+						<a href="javascript:;" class="search_nav_item">UED</a>
+						<a href="javascript:;" class="search_nav_item">防火墙</a>
+						<a href="javascript:;" class="search_nav_item">IOS</a>
+						<a href="javascript:;" class="search_nav_item">测试中心</a>
+						<div class="search_nav_itemTip"></div>	
+					</div>
+				</div>
+				<div class="search_nav">
+					<span class="search_nav_title">技术:</span>
+					<div class="search_nav_lists">
+						<a href="javascript:void(0)" class="search_nav_item search_nav_item_active">所有</a>
+						<a href="javascript:void(0)" class="search_nav_item">jenkins</a>
+						<a href="javascript:void(0)" class="search_nav_item">vue</a>
+						<a href="javascript:void(0)" class="search_nav_item">python</a>
+						<a href="javascript:void(0)" class="search_nav_item">nodejs</a>
+						<a href="javascript:void(0)" class="search_nav_item">ES6</a>
+						<a href="javascript:void(0)" class="search_nav_item">ajax</a>
+						<a href="javascript:void(0)" class="search_nav_item">canvas</a>
+						<a href="javascript:void(0)" class="search_nav_item">流程管理</a>
+						<div class="search_nav_itemTip"></div>	
+					</div>
+				</div>
+				<div class="search_nav">
+					<span class="search_nav_title">热门:</span>
+					<div class="search_nav_lists">
+						<a href="javascript:void(0)" class="search_nav_item search_nav_item_active">所有</a>
+						<a href="javascript:void(0)" class="search_nav_item">饭堂伙食</a>
+						<a href="javascript:void(0)" class="search_nav_item">季度考核</a>
+						<a href="javascript:void(0)" class="search_nav_item">晋升机制</a>
+						<a href="javascript:void(0)" class="search_nav_item">公司制度</a>
+						<a href="javascript:void(0)" class="search_nav_item">调薪</a>
+						<a href="javascript:void(0)" class="search_nav_item">年度旅游</a>
+						<div class="search_nav_itemTip"></div>	
+					</div>
+				</div>
+				<div class="search_nav">
+					<span class="search_nav_title">等级:</span>
+					<div class="search_nav_lists">
+						<a href="javascript:void(0)" class="search_nav_item search_nav_item_active">所有</a>
+						<a href="javascript:void(0)" class="search_nav_item">一级创新</a>
+						<a href="javascript:void(0)" class="search_nav_item">二级创新</a>
+						<a href="javascript:void(0)" class="search_nav_item">三级创新</a>
+						<a href="javascript:void(0)" class="search_nav_item">未评级</a>
+						<div class="search_nav_itemTip"></div>	
+					</div>
+				</div>
+
+			</div>
+
+			<a href="javascript:void(0)" id="a_article_con"></a>
+			<div class="article_con" id="article_con">
+				<p class="article_con_title"></p>
+				<p class="article_con_about"><span class="article_employee_name"></span><span class="article_employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span><span class="article_date"></span></p>
+				<p class="article_con_text"></p>
+				<a class="article_con_return" id="article_con_return" href='#article_navs'>返回</a>
+			</div>
+
+			<div class="article_navs" id="article_navs">
+<!--  				<div class="article_navItem">
+					<dl class="employee">
+						<dt class="employeePho"></dt>	
+						<dd class="employeeName">陈珠</dd>
+					</dl>
+					<a href="javascript:void(0)" class="article_title">json批量修改工具</a>
+					<p class="article_about">
+						<span class="employee_dpartment">测试中心</span>   
+						浏览<span class="article_visit">113</span>   
+						评论<span class="article_comment">5</span>  
+						<span class="article_level">三级创新</span>
+					</p>
+					<a href="javascript:void(0)" class="article_pre">在自动化测试过程中，经常需要批量修改json，一个一个地修改很麻烦，这个小工具可以根据cgi名称、opr值搜索到具体的json进行字符串替换，比较方便。实现方式：Ruby tk。使用方法：选择存放了json文件的目录，输入cgi、opr名称，填写替换前后的字符串，以"=>"分开。一行一组。</a>
+				</div>	
+ -->				
+ 				<div class="article_navItem">
+					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
+					<a href="#a_article_con" class="article_title"></a>
+					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
+					<a href="#a_article_con" class="article_pre"></a>
+				</div>	
+ 				<div class="article_navItem">
+					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
+					<a href="#a_article_con" class="article_title"></a>
+					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
+					<a href="#a_article_con" class="article_pre"></a>
+				</div>	
+ 				<div class="article_navItem">
+					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
+					<a href="#a_article_con" class="article_title"></a>
+					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
+					<a href="#a_article_con" class="article_pre"></a>
+				</div>				
+ 				<div class="article_navItem">
+					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
+					<a href="#a_article_con" class="article_title"></a>
+					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
+					<a href="#a_article_con" class="article_pre"></a>
+				</div>				
+ 				<div class="article_navItem">
+					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
+					<a href="#a_article_con" class="article_title"></a>
+					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
+					<a href="#a_article_con" class="article_pre"></a>
+				</div>				
+ 				<div class="article_navItem">
+					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
+					<a href="#a_article_con" class="article_title"></a>
+					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
+					<a href="#a_article_con" class="article_pre"></a>
+				</div>				
+ 				<div class="article_navItem">
+					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
+					<a href="#a_article_con" class="article_title"></a>
+					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
+					<a href="#a_article_con" class="article_pre"></a>
+				</div>																											
+ 				<div class="article_navItem">
+					<dl class="employee"><dt class="employeePho"></dt><dd class="employeeName"></dd></dl>
+					<a href="#a_article_con" class="article_title"></a>
+					<p class="article_about"><span class="employee_dpartment"></span><span class="article_visit"></span><span class="article_comment"></span><span class="article_level"></span></p>
+					<a href="#a_article_con" class="article_pre"></a>
+				</div>																											
+			</div>
+			<div class="page" id="page">
+				<span class="disabled_page">首页</span>
+				<span class="disabled_page">上一页</span>
+				<a href="javascript:void(0)" class="page_more page_hide">...</a>
+				<a href="javascript:void(0)">1</a>
+				<a href="javascript:void(0)">2</a>
+				<a href="javascript:void(0)">3</a>
+				<a href="javascript:void(0)" class="page_more">...</a>
+				<span class="disabled_page">下一页</span>
+				<span class="disabled_page">尾页</span>				
+			</div>
+		</div>
+	</div>
+
+	<div class="aside">
+		<div class="asideItem hotArticle">
+			<div class="asideTip">热门文章</div>
+			<div class="banner3d">
+				<ul>
+					<li> <!-- 轮播顺序：前上后下，2031-->
+						<div><p><a href="javascript:void(0)">json批量修改工具</a></p></div>
+						<div><p><a href="javascript:void(0)">前端开发流程改进建议</a></p></div>
+						<div><p><a href="javascript:void(0)">如何提高工作效率？</a></p></div>
+						<div><p><a href="javascript:void(0)">希望班车经过星大</a></p></div>
+					</li>
+					<li>
+						<div><p><a href="javascript:void(0)">json批量修改工具</a></p></div>
+						<div><p><a href="javascript:void(0)">前端开发流程改进建议</a></p></div>
+						<div><p><a href="javascript:void(0)">如何提高工作效率？</a></p></div>
+						<div><p><a href="javascript:void(0)">希望班车经过星大</a></p></div>
+					</li>
+					<li style="z-index: 1;">
+						<div><p><a href="javascript:void(0)">json批量修改工具</a></p></div>
+						<div><p><a href="javascript:void(0)">前端开发流程改进建议</a></p></div>
+						<div><p><a href="javascript:void(0)">如何提高工作效率？</a></p></div>
+						<div><p><a href="javascript:void(0)">希望班车经过星大</a></p></div>
+					</li>
+					<li>
+						<div><p><a href="javascript:void(0)">json批量修改工具</a></p></div>
+						<div><p><a href="javascript:void(0)">前端开发流程改进建议</a></p></div>
+						<div><p><a href="javascript:void(0)">如何提高工作效率？</a></p></div>
+						<div><p><a href="javascript:void(0)">希望班车经过星大</a></p></div>
+					</li>
+				</ul>
+				<ol>
+					<li class="on">1</li><li>2</li><li>3</li><li>4</li>
+				</ol>
+			</div>
+			<a href="javascript:void(0)" class="hotArticle_more">更多</a>
+		</div>
+		<div class="asideItem notesBox">
+			<div class="asideTip">系统公告</div>
+			<span class="notesToday">今日</span>
+			<div class="notes">
+				<a href="">[招聘公告] UED部门招聘，高级前端工程师5名，内推成功一位，奖金3-8k！</a>
+				<a href="">[招聘公告] UED部门招聘高级前端工程师5名，内推成功一位，奖金3-8k！</a>
+				<a href="">[绩效考核] 第三季度考核，即将开始，高级前端工程师5名，内推成功一位，奖金3-8k！</a>
+				<a href="">[财务公示] UED部门招聘高级前端工程师5名，内推成功一位，奖金3-8k！</a>
+				<a href="">[发票报销] 每周五吃饭，记得拿发票啊亲UED部门招聘高级前端工程师</a>
+				<a href="">[团建活动] UED部门招聘高级前端工程师5名，内推成功一位，奖金3-8k！</a>
+				<a href="">[招聘公告] 客服部招聘30名实习生，内推成功一位，奖金3-8k！</a>
+				<a href="">[招聘公告] UED部门招聘高级前端工程师5名，内推成功一位，奖金3-8k！</a>
+				<a href="">[招聘公告] 研发部，急聘架构师高级前端工程师5名，内推成功一位，奖金3-8k！</a>
+				<a href="">[招聘公告] UED部门招聘高级前端工程师5名，内推成功一位，奖金3-8k！</a>
+			</div>
+		</div>
+		<div class="asideItem theOneBox">
+			<div class="asideTip">面向对象</div>
+			<div class="theOne_warp">
+				<div class="theOne" id="theOne">
+					<img src="img/theone/1.jpeg" class="left" style="left: 20px;">
+					<img src="img/theone/2.jpeg" class="left" style="left: 50px;">
+					<img src="img/theone/3.jpeg" class="middle" style="left: 80px;">
+					<img src="img/theone/4.jpeg" class="right" style="left: 110px;">
+					<img src="img/theone/5.jpeg" class="right" style="left: 140px;">
+				</div>
+			</div>
+			<div class="theOne_name" id="theOne_name">
+				<a href="javascript:void(0)" class="hide">持家好男，小孩的数学老师</a>
+				<a href="javascript:void(0)" class="hide">斯人若彩虹，遇上方知有</a>
+				<a href="javascript:void(0)" class="show">脾气非常好的小哥哥</a>
+				<a href="javascript:void(0)" class="hide">你欣赏我，我崇拜你，这样就很好</a>
+				<a href="javascript:void(0)" class="hide">愿寻得聪明、善良、幽默的另一半</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="elevator">
+		<a href="">
+			<img src="img/elevator1.png">
+			<span>常见问题</span>
+		</a>
+		<a href="">
+			<img src="img/elevator2.png">
+			<span>意见反馈</span>
+		</a>
+		<a href="">
+			<img src="img/elevator3.png">
+			<span>作者信息</span>
+			<p class="elevator_author_box">
+				梁金水 ，27岁，13929563575，752030470@qq.com，毕业于广东工业大学，计算机学院。
+			</p>
+		</a>
+		<a href="">
+			<img src="img/elevator4.png">
+			<span>加我微信</span>
+			<div class="elevator_weixin_box"></div>
+		</a>
+	</div>
+
+	<!-- <div class="mask"></div> -->
+<!-- 	<div class="login">
+		<span>登录</span>
+		<div class="loginClose" id='loginClose'></div>
+		<div class="loginCon">
+			<form class="loginForm" action="javascript:void(0)" method="post" name="login">
+				<div class="loginIcon loginNameIcon"></div>
+				<input type="text" name="name" class="loginInputItem loginName" maxlength="10" placeholder="昵称/邮箱/手机号码">
+				<div class="loginIcon loginPassIcon"></div>
+				<input type="password" name="pass" class="loginInputItem loginPass" maxlength="10" placeholder="请输入密码">
+				<input type="checkbox" class="loginRem" id="loginRem"><label for="loginRem">记住密码</label>
+				<a href="javascript:void(0)" name="loginForget" class="loginForget">忘记密码？</a>
+				<input type="button" class="loginButton loginRegister" value="立即注册">
+				<input type="submit" class="loginButton loginSubmit" value="登录">
+			</form>
+			<div class="loginLine"></div>
+			<div class="loginByOther">
+				<span>一键授权，快速登录</span>
+				<a href="javascript:void(0)" class="loginQQ loginQQ_start" id='loginQQ'>QQ账号直接登录</a>
+				<div class='loginQQImg loginQQImg_start' id='loginQQImg'></div>
+				<a href="javascript:void(0)" class="loginWeibo">新浪微博账号登录</a>
+			</div>
+		</div>
+	</div> -->
+
+	<div class="footer">与其抱怨，不如提个创新</div>	
+</body>
+</html>

@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Class-Path: pagehelper-spring-boot-autoconfigure-1.2.3.jar spring-bean
+ s-5.0.8.RELEASE.jar tomcat-embed-core-8.5.32.jar druid-1.1.10.jar spr
+ ing-boot-autoconfigure-2.0.4.RELEASE.jar logback-classic-1.2.3.jar va
+ lidation-api-2.0.1.Final.jar slf4j-api-1.7.25.jar spring-boot-2.0.4.R
+ ELEASE.jar logback-core-1.2.3.jar mybatis-3.4.6.jar jackson-core-2.9.
+ 6.jar spring-boot-starter-2.0.4.RELEASE.jar spring-jdbc-5.0.8.RELEASE
+ .jar jboss-logging-3.3.2.Final.jar spring-boot-starter-json-2.0.4.REL
+ EASE.jar jackson-databind-2.9.6.jar jackson-datatype-joda-2.9.6.jar s
+ pring-jcl-5.0.8.RELEASE.jar jackson-annotations-2.9.0.jar fastjson-1.
+ 2.51.jar spring-expression-5.0.8.RELEASE.jar jackson-datatype-jsr310-
+ 2.9.6.jar spring-web-5.0.8.RELEASE.jar mysql-connector-java-5.1.46.ja
+ r jsqlparser-1.0.jar spring-webmvc-5.0.8.RELEASE.jar druid-spring-boo
+ t-starter-1.1.10.jar spring-core-5.0.8.RELEASE.jar javax.annotation-a
+ pi-1.3.2.jar tomcat-embed-el-8.5.32.jar spring-boot-starter-logging-2
+ .0.4.RELEASE.jar pagehelper-5.1.2.jar mybatis-spring-1.3.2.jar spring
+ -context-5.0.8.RELEASE.jar spring-tx-5.0.8.RELEASE.jar HikariCP-2.7.9
+ .jar spring-boot-starter-jdbc-2.0.4.RELEASE.jar spring-aop-5.0.8.RELE
+ ASE.jar mybatis-spring-boot-autoconfigure-1.3.2.jar log4j-to-slf4j-2.
+ 10.0.jar jackson-module-parameter-names-2.9.6.jar gson-2.8.5.jar snak
+ eyaml-1.19.jar commons-io-1.3.2.jar log4j-api-2.10.0.jar spring-boot-
+ starter-web-2.0.4.RELEASE.jar joda-time-2.9.9.jar java-jwt-2.2.0.jar 
+ mybatis-spring-boot-starter-1.3.2.jar spring-boot-starter-tomcat-2.0.
+ 4.RELEASE.jar tomcat-embed-websocket-8.5.32.jar classmate-1.3.4.jar p
+ agehelper-spring-boot-starter-1.2.3.jar hibernate-validator-6.0.11.Fi
+ nal.jar jackson-datatype-jdk8-2.9.6.jar jul-to-slf4j-1.7.25.jar
+Main-Class: com.steven.mybatisgenerator.MybatisgeneratorApplication
+
