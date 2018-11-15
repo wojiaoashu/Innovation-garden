@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.steven.mybatisgenerator.mapper.ArticleMapper" >
+  <resultMap id="BaseResultMap" type="com.steven.mybatisgenerator.model.Article" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="article_datetime" property="articleDatetime" jdbcType="TIMESTAMP" />
+    <result column="article_title" property="articleTitle" jdbcType="VARCHAR" />
+    <result column="article_text" property="articleText" jdbcType="VARCHAR" />
+    <result column="article_pre" property="articlePre" jdbcType="VARCHAR" />
+    <result column="article_visit" property="articleVisit" jdbcType="INTEGER" />
+    <result column="article_comment" property="articleComment" jdbcType="INTEGER" />
+    <result column="article_level" property="articleLevel" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, article_datetime,article_title, article_text, article_visit, article_comment,article_level
+  </sql>
+  <sql id="Base_Column_List_pre" >
+    id, user_id, article_datetime,article_title, article_pre, article_visit, article_comment,article_level
+  </sql>
+  <select id="selectOnePageWithPre" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select
+    <include refid="Base_Column_List_pre" />
+    from article
+    order by id desc limit #{recordStart,jdbcType=INTEGER},8
+  </select>
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select
+    <include refid="Base_Column_List" />
+    from article
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <insert id="insert" parameterType="com.steven.mybatisgenerator.model.Article">
+    insert into article (id, user_id, article_title,article_text,article_pre)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER},
+    #{articleTitle,jdbcType=VARCHAR},#{articleText,jdbcType=VARCHAR},#{articlePre,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateVisit" parameterType="com.steven.mybatisgenerator.model.Article" >
+    update article
+    set article_visit = #{articleVisit,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectCount" resultType="java.lang.Integer">
+    select
+    count(*)
+    from article;
+  </select>
+  <select id="pageCountByKey" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select
+    count(*)
+    from article
+    where article_text like CONCAT('%',#{pageKey,jdbcType=VARCHAR},'%')
+  </select>
+  <select id="pageCountByLevel" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select
+    count(*)
+    from article
+    where article_level = #{pageKey,jdbcType=VARCHAR}
+  </select>
+  <select id="pageCountByDepartment" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select
+    count(*)
+    from article
+    inner join user on article.user_id = user.id
+    where user_department = #{pageKey,jdbcType=VARCHAR}
+  </select>
+  <select id="pageCountByTitleOrContextOrLevel" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select
+    count(*)
+    from article
+    where article_title like CONCAT('%',#{pageKey,jdbcType=VARCHAR},'%') or article_text like CONCAT('%',#{pageKey,jdbcType=VARCHAR},'%') or article_level = #{pageKey,jdbcType=VARCHAR}
+  </select>
+
+</mapper>
+
+

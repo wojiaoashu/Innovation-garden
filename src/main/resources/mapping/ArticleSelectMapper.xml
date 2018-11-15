@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.steven.mybatisgenerator.mapper.ArticleSelectMapper" >
+  <resultMap id="BaseResultMap" type="com.steven.mybatisgenerator.model.Article" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="article_datetime" property="articleDatetime" jdbcType="TIMESTAMP" />
+    <result column="article_title" property="articleTitle" jdbcType="VARCHAR" />
+    <result column="article_text" property="articleText" jdbcType="VARCHAR" />
+    <result column="article_pre" property="articlePre" jdbcType="VARCHAR" />
+    <result column="article_visit" property="articleVisit" jdbcType="INTEGER" />
+    <result column="article_comment" property="articleComment" jdbcType="INTEGER" />
+    <result column="article_level" property="articleLevel" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List_pre" >
+    id, user_id, article_datetime,article_title, article_pre, article_visit, article_comment,article_level
+  </sql>
+  <select id="selectOnePageWithPreAndKey" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List_pre" />
+    from article
+    where article_text like CONCAT('%',#{pageKey,jdbcType=VARCHAR},'%') or article_title like CONCAT('%',#{pageKey,jdbcType=VARCHAR},'%')
+    order by id desc limit #{recordStart,jdbcType=INTEGER},8
+  </select>
+
+  <select id="selectOnePageWithPreByLevel" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List_pre" />
+    from article
+    where article_level = #{pageKey,jdbcType=VARCHAR}
+    order by id desc limit #{recordStart,jdbcType=INTEGER},8
+  </select>
+
+  <select id="selectOnePageWithPreByDepartment" resultMap="BaseResultMap">
+    select
+    article.id, user_id, article_datetime,article_title, article_pre, article_visit, article_comment,article_level
+    from article
+    inner join user on article.user_id = user.id
+    where user_department = #{pageKey,jdbcType=VARCHAR}
+    order by id desc limit #{recordStart,jdbcType=INTEGER},8
+  </select>
+
+  <select id="selectOnePageWithPreAndInputKey" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List_pre" />
+    from article
+    where article_level = #{pageKey,jdbcType=VARCHAR} or article_text like CONCAT('%',#{pageKey,jdbcType=VARCHAR},'%') or article_title like CONCAT('%',#{pageKey,jdbcType=VARCHAR},'%')
+    order by id desc limit #{recordStart,jdbcType=INTEGER},8
+  </select>
+
+</mapper>
+
+
