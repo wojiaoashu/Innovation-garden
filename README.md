@@ -8,6 +8,7 @@
 
 举例，以阿里云ECS实例 Ubuntu16.06作为服务器，公网IP地址47.107.148.70，安全组放通80端口。
 
+
 一、安装配置jdk1.8
 
 1、本地mac通过网页下载安装包：https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
@@ -30,6 +31,7 @@ export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
 
 5、重启Linux，java -version看到版本号说明安装成功。
+
 
 二、安装mysql5.6或5.7
 
@@ -91,6 +93,15 @@ create table article (
 );
 
 alter table article add column article_pre varchar(110);
+
+
+三、打包springBoot项目
+
+1、检查index.js文件，将homePath的值改为服务器公网IP地址： homePath = 'http://47.107.148.70/'; 
+
+2、检查application.yml文件，确保prot是80端口。
+
+3、
 
 
 
