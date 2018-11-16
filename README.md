@@ -101,7 +101,11 @@ alter table article add column article_pre varchar(110);
 
 2、检查application.yml文件，确保prot是80端口。
 
-3、
+3、使用Maven打包：
+
+参考 https://blog.csdn.net/yangfengjueqi/article/details/79076350 的方法二。
+
+4、cd /home 执行 java -jar mybatisgenerator-0.0.1-SNAPSHOT.jar 
 
 
 
