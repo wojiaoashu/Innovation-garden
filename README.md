@@ -1,6 +1,8 @@
 # Innovation-garden
 版本：mysql1.2_springBoot1.2
 
+部署方案参考：https://github.com/wojiaoashu/Innovation-garden/blob/mysql1.2_springBoot1.2/README.md
+
 修复了9个bug：
 
 1、对index.js修改getPage函数，使得查看一篇文章后，点击导航搜索仍然有效。
