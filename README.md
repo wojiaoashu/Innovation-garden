@@ -41,31 +41,56 @@ sudo apt-get install mysql-server
 
 2、新建数据库和表
 
-新建数据库 innovationgarden
+1）新建数据库 innovationgarden
+
+2）新建user表和article表
 
 create table user (
+
 	id int not null auto_increment,
+	
 	user_name varchar(20) not null,
+	
 	user_pasw char(128) not null,
+	
 	user_mail varchar(50) UNIQUE,
+	
 	user_phoneNumber varchar(13) UNIQUE,
+	
 	user_phoPath varchar(50) default 'img/man/girl0.png',
+	
 	user_department varchar(50) default '未分配',
+	
 	primary key ( id )
+	
 );
 
+
 create table article (
+
 	id int not null auto_increment,
+	
 	user_id int not null,
+	
   	article_datetime datetime default now(),
+	
 	article_title varchar(255) not null,
+	
 	article_text LONGTEXT,
+	
 	article_visit int not null default 0,
+	
 	article_comment int not null default 0,
+	
 	article_level varchar(50) default '未评级',
+	
 	primary key( id ),
+	
 	foreign key( user_id ) references user(id)
+	
 );
+
 alter table article add column article_pre varchar(110);
+
 
 
