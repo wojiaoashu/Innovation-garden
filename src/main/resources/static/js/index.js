@@ -457,6 +457,9 @@ function changePage(lastIndex,type,key){
             pages[3].className = 'page_hide';
             pages[2].click();
         }else{
+            pages[1].innerHTML = lastIndex - 2;
+            pages[2].innerHTML = lastIndex - 1;
+            pages[3].innerHTML = lastIndex;
             pages[3].click();
         }
     }
