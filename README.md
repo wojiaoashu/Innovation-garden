@@ -99,13 +99,15 @@ alter table article add column article_pre varchar(110);
 
 1、检查index.js文件，将homePath的值改为服务器公网IP地址： homePath = 'http://47.107.148.70/'; 
 
-2、检查application.yml文件，确保prot是80端口。
+2、检查application.yml文件，确保port是80端口。
 
 3、使用Maven打包：
 
 参考 https://blog.csdn.net/yangfengjueqi/article/details/79076350 的方法二。
 
-4、cd /home 执行 java -jar mybatisgenerator-0.0.1-SNAPSHOT.jar 
+4、上传jar包：scp /Users/shuvia/Desktop/mybatisgenerator/target/mybatisgenerator-0.0.1-SNAPSHOT.jar root@47.107.148.70:/home
+
+5、cd /home 执行 java -jar mybatisgenerator-0.0.1-SNAPSHOT.jar 
 
 
 
