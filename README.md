@@ -1,7 +1,7 @@
 # Innovation-garden
 版本：mysql1.2_springBoot1.2
 
-部署方案同：https://github.com/wojiaoashu/Innovation-garden/blob/mysql1.2_springBoot1.2/README.md
+部署方案同：https://github.com/wojiaoashu/Innovation-garden/blob/mysql1.1_springBoot1.0/README.md
 
 修复了9个bug：
 
