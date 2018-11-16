@@ -41,7 +41,24 @@ sudo apt-get update
 
 sudo apt-get install mysql-server 
 
-2、新建数据库和表
+2、修改配置支持中文
+
+vim /etc/mysql/my.cnf，修改如下：
+
+[client]
+
+    default-character-set=utf8   
+    
+[mysqld]  
+
+    character-set-server=utf8
+    
+    collation-server=utf8_general_ci
+    
+然后重启msyql，执行命令 /etc/init.d/mysql restart 或者 service mysql restart
+
+
+3、新建数据库和表
 
 1）新建数据库 innovationgarden
 
